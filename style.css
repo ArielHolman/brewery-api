@@ -1,0 +1,114 @@
+body {
+  padding: 40px 0;
+  font-family: "bebas", sans-serif;
+  letter-spacing: 3px;
+  background-color: #ddc553;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+body .textcontainer {
+  padding: 40px 0;
+  text-align: center;
+  font-size: 55px;
+}
+
+body .particletext {
+  text-align: center;
+  font-size: 95px;
+  position: relative;
+}
+
+img {
+  max-width: 5%;
+}
+
+body .particletext.bubbles > .particle {
+  opacity: 0;
+  position: absolute;
+  background-color: #fff;
+  -webkit-animation: bubbles 3s ease-in infinite;
+  animation: bubbles 3s ease-in infinite;
+  border-radius: 100%;
+}
+
+@-webkit-keyframes bubbles {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: translate(0, -20%);
+    transform: translate(0, -20%);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(0, -1000%);
+    transform: translate(0, -1000%);
+  }
+}
+
+@keyframes bubbles {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+    -webkit-transform: translate(0, -20%);
+    transform: translate(0, -20%);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(0, -1000%);
+    transform: translate(0, -1000%);
+  }
+}
+
+button {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 1rem 2rem;
+  cursor: pointer;
+  font-family: "Recursive", sans-serif;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  list-style-type: none;
+  text-align: center;
+  margin: 0 10rem;
+}
+.title {
+  font-size: 25px;
+  font-family: "Recursive", sans-serif;
+  margin-bottom: 0px;
+  letter-spacing: 4px;
+}
+.beer-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  align-items: center;
+}
+.beer-abv {
+  font-size: 16px;
+}
+
+.beer-description {
+  margin-top: 0;
+}
+
+.beer-tagline{
+  margin-bottom: 0;
+}
