@@ -65,11 +65,15 @@ const randomBeer = () => {
 const lowBeers = () => {
   clearList();
   const allBeer = this.document.getElementById("all-beer");
+
   arrayOfLows.forEach((beer) => {
+    const beerImg = beer.image_url ?? "https://images.punkapi.com/v2/23.png";
     const beerInfo = `<li class="beer-item">
     <h4 class="title">${beer.name} - <span class="beer-abv">abv ${beer.abv}%</span></h4>
     <h5 class="beer-tagline">${beer.tagline}</h5>
     <h6 class='beer-description'>${beer.description}</h6>
+    <img src=${beerImg}/>
+    <h4> ------------------------------------------------------------ </h4>
     </li>`;
     allBeer.insertAdjacentHTML("afterbegin", beerInfo);
   });
@@ -78,11 +82,15 @@ const lowBeers = () => {
 const highBeers = () => {
   clearList();
   const allBeer = this.document.getElementById("all-beer");
+
   arrayOfHighs.forEach((beer) => {
+    const beerImg = beer.image_url ?? "https://images.punkapi.com/v2/23.png";
     const beerInfo = `<li class="beer-item">
     <h4 class="title">${beer.name} - <span class="beer-abv">abv ${beer.abv}%</span></h4>
     <h5 class="beer-tagline">${beer.tagline}</h5>
     <h6 class='beer-description'>${beer.description}</h6>
+    <img src=${beerImg}/>
+    <h4> ------------------------------------------------------------ </h4>
     </li>`;
     allBeer.insertAdjacentHTML("afterbegin", beerInfo);
   });
