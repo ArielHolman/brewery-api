@@ -1,13 +1,8 @@
-// const axios = require("axios");
-// require("dotenv").config()
-// const apiKey = process.env.API_KEY
-// const apiKey = "1edb01805b03ec766525435c8a6effd0";
-// Build an app that allows a user to find breweries near them.
-
 let arrayOfLows;
 let arrayOfHighs;
 let arrayRandom;
 
+// make fetch calls for all buttons
 // eslint-disable-next-line no-undef
 window.onload = function () {
   low();
@@ -15,34 +10,40 @@ window.onload = function () {
   random();
 };
 
+//background bubbles
 function initparticles() {
   bubbles();
 }
 
+// fetch a random beer
 const random = () => {
   fetch("https://api.punkapi.com/v2/beers/random")
     .then((res) => res.json())
     .then((response) => (arrayRandom = response));
 };
 
+// fetch a low abv beer
 const low = () => {
   fetch("https://api.punkapi.com/v2/beers?abv_lt=5")
     .then((res) => res.json())
     .then((response) => (arrayOfLows = response));
 };
 
+// fetch a high abv beer
 const high = () => {
   fetch(" https://api.punkapi.com/v2/beers?abv_gt=5")
     .then((res) => res.json())
     .then((response) => (arrayOfHighs = response));
 };
 
+// clear the list before you load new list
 const clearList = () => {
   allBeer = this.document.getElementsByTagName("UL");
   // eslint-disable-next-line prettier/prettier
   for (i = 0; i < allBeer.length; i++) allBeer[i].innerHTML = null;
 };
 
+// select a random beer
 const randomBeer = () => {
   clearList();
   random();
@@ -62,6 +63,7 @@ const randomBeer = () => {
   });
 };
 
+// select a low abv beer
 const lowBeers = () => {
   clearList();
   const allBeer = this.document.getElementById("all-beer");
@@ -79,6 +81,7 @@ const lowBeers = () => {
   });
 };
 
+// select a high abv beer
 const highBeers = () => {
   clearList();
   const allBeer = this.document.getElementById("all-beer");
@@ -96,7 +99,7 @@ const highBeers = () => {
   });
 };
 
-// JQUERY bubble stuff
+// jQuery bubble background
 
 function bubbles() {
   $.each($(".particletext.bubbles"), function () {
